@@ -1,0 +1,200 @@
+/* To start off, font face rules that I'm self hosting for display purposes */
+@font-face {
+    font-family: "Garamond";
+    src: url("/static/fonts/EBGaramond-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Garamond Bold";
+    src: url("fonts/EBGaramond-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Times New Roman";
+    src: url("fonts/times.ttf") format("truetype");
+}
+
+/* CSS variables for styling and sizing, divided accordingly */
+:root {
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-blue: #98c1d9;
+    --color-light-grey: #e0e0e0;
+    --color-accent: #009DD1;
+    --font-basic: "Times New Roman", Times, serif;
+    --font-secondary: "Garamond", serif;
+    --font-bold: "Garamond Bold", serif;
+
+    --font-small: 0.875rem;
+    --font-normal: 1rem;
+    --font-medium: 1.25rem;
+    --font-big: 1.5rem;
+    --font-xlarge: 2rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* The body is set up as a grid to indicate where the header, content, and footer should be located. The header and footer both use auto, so that they are automatically sized.  */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: minmax(0, 1fr);
+    background-color: var(--color-white);
+    margin: 0px;
+    text-wrap: pretty;
+}
+
+/* I know the proper way to do this is with BEM and distinct classes, but for a website of this scale, I think it's unnecessary */
+header {
+    background-color: var(--color-light-grey);
+    text-align: center;
+    font-family: var(--font-bold);
+}
+
+h1 {
+    font-family: var(--font-bold);
+    font-size: var(--font-xlarge);
+    margin: 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-black); 
+}
+
+h2 {
+    font-family: var(--font-bold);
+    font-size: var(--font-big);
+    margin: 0.5rem;
+}
+
+h3 {
+    font-family: var(--font-bold);
+    font-size: var(--font-medium);
+    margin: 0.5rem;
+}
+
+p {
+    font-size: var(--font-normal);
+    font-family: var(--font-basic);
+    margin: 0.5rem;
+}
+
+address {
+    margin: 0.5rem;
+}
+
+strong {
+    font-family: var(--font-bold);
+}
+
+main {
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: var(--font-normal);
+    font-family: var(--font-basic);
+}
+
+footer {
+    background-color: var(--color-blue);
+    text-align: center;
+    color: var(--color-black);
+}
+
+footer p {
+    font-size: var(--font-small);
+}
+
+nav {
+    /* This does the scrolling header effect */
+    position: sticky;
+    top: 0;
+    background-color: var(--color-blue);
+    border-bottom: 1px solid var(--color-black);
+    justify-content: center;
+}
+
+nav ul {
+    margin: auto;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+nav a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--color-black);
+    text-align: center;
+    font-family: var(--font-bold);
+    font-size: var(--font-medium);
+}
+
+nav a.active {
+    text-decoration: underline;
+}
+
+nav a:hover {
+    background-color: var(--color-accent);
+}
+
+article {
+    margin: 1rem;
+    box-shadow: -5px 5px #737270;
+    scroll-margin-top: 3rem;
+    padding-bottom: 0.25rem;
+    margin-bottom: 3rem;
+}
+
+article p {
+    text-align: justify;
+}
+
+article div {
+    background-color: var(--color-light-grey);
+    border-bottom: 1px solid var(--color-black);
+}
+
+article div p {
+    font-size: var(--font-small);
+    font-family: var(--font-bold);
+}
+
+.blog_nav {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    scroll-margin-top: 100px;
+    margin-left: 1.5rem;
+}
+
+.blog_nav li {
+    padding: 0;
+    margin-right: 2rem;
+}
+
+.blog_nav a {
+    display: block;
+    text-decoration: underline;
+    color: var(--color-black);
+    font-family: var(--font-bold);
+    font-size: var(--font-normal);
+}
+
+.blog_return {
+    font-size: var(--font-small);
+    text-decoration: none;
+    color: #0000EE;
+}
+
+.homelink {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+

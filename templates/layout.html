@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ .Title }}</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <nav>
+            <li><a href="/">Home</a></li>
+            <li><a href="/resume">Resume</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </nav>
+        
+        <main>
+            {{ template "content" . }}
+        </main>
+
+        <footer>
+            <p>&copy; 2026 by Kawika Dembroski. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
