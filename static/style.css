@@ -1,120 +1,193 @@
-/* To start off, font face rules that I'm self hosting for display purposes */
+/* ===================================================================
+   Fonts
+   =================================================================== */
 @font-face {
-    font-family: "Garamond";
-    src: url("/static/fonts/EBGaramond-Regular.ttf") format("truetype");
-    font-weight: normal;
+    font-family: "Lora";
+    src: url("/static/fonts/Lora-VariableFont_wght.ttf") format("truetype-variations");
+    font-weight: 400 700;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: "Garamond Bold";
-    src: url("fonts/EBGaramond-Bold.ttf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
+    font-family: "Lora";
+    src: url("/static/fonts/Lora-Italic-VariableFont_wght.ttf") format("truetype-variations");
+    font-weight: 400 700;
+    font-style: italic;
+    font-display: swap;
 }
 
-@font-face {
-    font-family: "Times New Roman";
-    src: url("fonts/times.ttf") format("truetype");
-}
-
-/* CSS variables for styling and sizing, divided accordingly */
+/* ===================================================================
+   Tokens
+   =================================================================== */
 :root {
+    --color-paper: #FAFAF8;
+    --color-ink: #111111;
+    --color-ink-soft: #6B6B6B;
+    --color-stone: #E8E6E1;
     --color-black: #000000;
     --color-white: #FFFFFF;
-    --color-blue: #98c1d9;
-    --color-light-grey: #e0e0e0;
-    --color-accent: #009DD1;
-    --font-basic: "Times New Roman", Times, serif;
-    --font-secondary: "Garamond", serif;
-    --font-bold: "Garamond Bold", serif;
+
+    --font-display: "Lora", Georgia, serif;
+    --font-body: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 
     --font-small: 0.875rem;
     --font-normal: 1rem;
     --font-medium: 1.25rem;
-    --font-big: 1.5rem;
-    --font-xlarge: 2rem;
+    --font-big: 1.75rem;
+    --font-xlarge: 2.5rem;
+
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 2rem;
 }
 
+/* ===================================================================
+   Base
+   =================================================================== */
 html {
     scroll-behavior: smooth;
 }
 
-/* The body is set up as a grid to indicate where the header, content, and footer should be located. The header and footer both use auto, so that they are automatically sized.  */
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-template-columns: minmax(0, 1fr);
-    background-color: var(--color-white);
-    margin: 0px;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--font-normal);
+    line-height: 1.6;
     text-wrap: pretty;
 }
 
-/* I know the proper way to do this is with BEM and distinct classes, but for a website of this scale, I think it's unnecessary */
+/* ===================================================================
+   Header / masthead
+   =================================================================== */
 header {
-    background-color: var(--color-light-grey);
+    background-color: var(--color-paper);
     text-align: center;
-    font-family: var(--font-bold);
+    padding: var(--space-3) var(--space-2) var(--space-2);
+    border-bottom: 1px solid var(--color-black);
 }
 
 h1 {
-    font-family: var(--font-bold);
+    font-family: var(--font-display);
+    font-weight: 600;
     font-size: var(--font-xlarge);
-    margin: 0.5rem;
+    letter-spacing: 0.01em;
+    margin: 0 0 var(--space-1);
     text-align: center;
-    border-bottom: 1px solid var(--color-black); 
 }
 
 h2 {
-    font-family: var(--font-bold);
+    font-family: var(--font-display);
+    font-weight: 600;
     font-size: var(--font-big);
-    margin: 0.5rem;
+    margin: var(--space-2) 0 var(--space-1);
 }
 
 h3 {
-    font-family: var(--font-bold);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-style: italic;
     font-size: var(--font-medium);
-    margin: 0.5rem;
+    margin: var(--space-2) 0 var(--space-1);
 }
 
 p {
     font-size: var(--font-normal);
-    font-family: var(--font-basic);
-    margin: 0.5rem;
+    font-family: var(--font-body);
+    margin: 0 0 var(--space-2);
+    color: var(--color-ink);
 }
 
 address {
-    margin: 0.5rem;
+    margin: var(--space-1) 0;
+    font-style: normal;
+    color: var(--color-ink-soft);
 }
 
 strong {
-    font-family: var(--font-bold);
+    font-family: var(--font-body);
+    font-weight: 700;
 }
 
 main {
+    max-width: 42rem;
     margin: 0 auto;
-    padding: 2rem;
-    font-size: var(--font-normal);
-    font-family: var(--font-basic);
+    padding: var(--space-3) var(--space-2);
 }
 
+/* ===================================================================
+   Footer
+   =================================================================== */
 footer {
-    background-color: var(--color-blue);
+    background-color: var(--color-stone);
     text-align: center;
-    color: var(--color-black);
+    color: var(--color-ink);
+    border-top: 1px solid var(--color-black);
+    padding: var(--space-2) var(--space-1);
 }
 
 footer p {
     font-size: var(--font-small);
+    color: var(--color-ink-soft);
+    margin: 0;
 }
 
+/* ===================================================================
+   Nav
+   =================================================================== */
+
 nav {
-    /* This does the scrolling header effect */
     position: sticky;
     top: 0;
-    background-color: var(--color-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: 0 var(--space-2);
+    background-color: var(--color-paper);
     border-bottom: 1px solid var(--color-black);
-    justify-content: center;
+    z-index: 10;
+}
+
+nav .brand {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--font-normal);
+    letter-spacing: 0.02em;
+    color: var(--color-ink);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+nav .brand::after {
+    content: "_";
+    font-family: "JetBrains Mono", "SFMono-Regular", Consalas, monospace;
+    font-weight: 500;
+    margin-left: 0.1em;
+    animation: cursor-blink 1s step-end infinite;
+    position: static;
+    left: auto;
+    bottom: auto;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    transition: none;
+}
+
+@keyframes cursor-blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    nav .brand::after {
+        animation: none;
+    }
 }
 
 nav ul {
@@ -122,79 +195,112 @@ nav ul {
     padding: 0;
     display: flex;
     list-style-type: none;
-    justify-content: space-around;
+    justify-content: flex-end;
 }
 
 nav a {
+    position: relative;
     display: block;
-    padding: 10px 15px;
+    padding: var(--space-2) var(--space-1);
     text-decoration: none;
-    color: var(--color-black);
+    color: var(--color-ink);
     text-align: center;
-    font-family: var(--font-bold);
-    font-size: var(--font-medium);
+    font-family: var(--font-body);
+    font-size: var(--font-small);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.15s ease, color 0.15s ease;
 }
 
-nav a.active {
-    text-decoration: underline;
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 6px;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-black);
+    transition: width 0.2s ease, left 0.2s ease;
 }
 
-nav a:hover {
-    background-color: var(--color-accent);
+nav a:hover::after {
+    width: calc(100% - 2rem);
+    left: 1rem;
 }
 
+/* ===================================================================
+   Article
+   =================================================================== */
 article {
-    margin: 1rem;
-    box-shadow: -5px 5px #737270;
+    margin: 0 0 var(--space-3);
+    border: 1px solid var(--color-stone);
     scroll-margin-top: 3rem;
-    padding-bottom: 0.25rem;
-    margin-bottom: 3rem;
+    padding-bottom: var(--space-1);
 }
 
 article p {
     text-align: justify;
+    padding: 0 var(--space-2);
 }
 
 article div {
-    background-color: var(--color-light-grey);
+    background-color: var(--color-stone);
     border-bottom: 1px solid var(--color-black);
+    padding: var(--space-1) var(--space-2);
 }
 
 article div p {
     font-size: var(--font-small);
-    font-family: var(--font-bold);
+    font-family: var(--font-display);
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+    color: var(--color-ink);
 }
 
+/* ===================================================================
+   Blog nav / return links
+   =================================================================== */
 .blog_nav {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     scroll-margin-top: 100px;
-    margin-left: 1.5rem;
+    margin: var(--space-2) 0 var(--space-2) var(--space-2);
 }
 
 .blog_nav li {
     padding: 0;
-    margin-right: 2rem;
+    margin-right: var(--space-3);
 }
 
 .blog_nav a {
     display: block;
     text-decoration: underline;
-    color: var(--color-black);
-    font-family: var(--font-bold);
+    text-underline-offset: 3px;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-weight: 600;
     font-size: var(--font-normal);
 }
 
 .blog_return {
     font-size: var(--font-small);
     text-decoration: none;
-    color: #0000EE;
+    color: var(--color-ink-soft);
+    border-bottom: 1px solid var(--color-ink-soft);
+}
+
+.blog_return:hover {
+    color: var(--color-ink);
+    border-bottom-color: var(--color-ink);
 }
 
 .homelink {
     text-decoration: none;
-    color: var(--color-black);
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-weight: 600;
 }
-
-
