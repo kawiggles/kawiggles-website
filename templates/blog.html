@@ -1,0 +1,24 @@
+{{ define "content" }}
+
+<ul class="blog_nav">
+    {{ range .Posts }}
+    <li><a href="#{{ .Slug }}">{{ .Title }}</a></li>
+    {{ end }}
+</ul>
+
+{{ range .Posts }}
+
+<article id="{{ .Slug }}">
+    <div>
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Date.Format "Monday, January 2, 2006" }}</p>
+    </div>
+    {{ .HTML }}
+    <div>
+        <a href="#blog_nav" class="blog_return">return to article list</a>
+    </div>
+</article>
+
+{{ end }}
+
+{{ end }}

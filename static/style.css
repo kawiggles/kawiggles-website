@@ -240,11 +240,6 @@ article {
     padding-bottom: var(--space-1);
 }
 
-article p {
-    text-align: justify;
-    padding: 0 var(--space-2);
-}
-
 article div {
     background-color: var(--color-stone);
     border-bottom: 1px solid var(--color-black);
@@ -258,6 +253,32 @@ article div p {
     padding: 0;
     margin: 0;
     color: var(--color-ink);
+}
+
+article div h2 {
+    font-size: var(--font-big);
+    font-family: var(--font-display);
+    padding: 0;
+    margin: 0;
+}
+
+article p {
+    text-align: justify;
+    padding: 0 var(--space-2);
+}
+
+article h1 {
+    font-size: var(--font-medium);
+    font-family: var(--font-display);
+    text-align: left;
+    padding: 0 var(--space-2);
+}
+
+article h2 {
+    font-size: var(--font-normal);
+    font-family: var(--font-display);
+    text-align: justify;
+    padding: 0 var(--space-2);
 }
 
 /* ===================================================================
@@ -296,11 +317,4 @@ article div p {
 .blog_return:hover {
     color: var(--color-ink);
     border-bottom-color: var(--color-ink);
-}
-
-.homelink {
-    text-decoration: none;
-    color: var(--color-ink);
-    font-family: var(--font-display);
-    font-weight: 600;
 }
