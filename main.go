@@ -38,7 +38,7 @@ func main() {
 		http.ServeFile(w, r, "./static/robots.txt")
 	})
 
-	log.Fatal(http.ListenAndServe(":8080", r))
+	log.Fatal(http.ListenAndServe("127.0.0.1:8080", r))
 }
 
 func loadTemplates() {
