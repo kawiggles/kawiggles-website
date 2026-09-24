@@ -34,6 +34,9 @@ func main() {
 	r.Get("/projects", projectsHandler)
 	r.Get("/blog", blog.blogHandler)
 	r.Get("/contact", contactHandler)
+	r.Get("/robots.txt", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "./static/robots.txt")
+	})
 
 	log.Fatal(http.ListenAndServe(":8080", r))
 }
