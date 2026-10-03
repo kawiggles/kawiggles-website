@@ -1,32 +1,52 @@
 {{ define "content" }}
 
 <h2>Technical Skills</h2>
+<p>In the time I have been working with computers, I have developed a number of technical skills, ranging from the basics of computer configuration and troubleshooting to more advanced topics like programming an docker.</p>
 
 <h3>Programming</h3>
+<p>I've been programming consistently since February 2026, which is when I first really dedicated myself to a programming project. However, my experience with programming dates back to when I was in middle school, which is when I first learned syntax. It took many years of understanding how computers work fundamentally before I was able to actually apply the principles of programming in practical projects. Gaining this understanding allowed me to approach programming from an architectural perspective, rather than just worrying about syntax and basic idioms.</p>
+
+<p>My primary interest when it comes to programming are low-level systems tools. I am drawn towards projects which focus on how the a system's underlying components function; my database engine, shell, archiver, and http server projects all grew out of a curiosity of how the basic components of the internet function. My projects take on an academic nature as a result: the goal of the project is not necessarily a finished product so much as it is an understanding of the system. Projects which present more complex or interesting academic/engineering challenges are the ones I tend to focus on more, which is why my database engine is my most robust project.</p>
+
+<p>My choice in programming languages also reflects this desire to understand low-level systems. I particularly enjoy using languages which are designed to work with and manipulated binary directly. I have by far the most experience with <b>Rust</b>, which I enjoy because of the type system and inherent safety; I view it as being as less flexible version of C++ that's easier to read, make safe, and actually use because you don't have to choose between paradigms within the language itself. Another language I have a fair amount of experience with is <b>Go</b>, which this website is written in. Go is extremely conveinient because of its concurrency model and brevity. Most tasks can be accomplished in only a couple lines of Go, so it's fantastic for when you just want to get a thing done. I don't often choose it for hobby projects because it's pretty boring to write, but first class functions, the channel based/goroutine concurrency model, and the package system on top of being a compiled, typed language with pointers make it easy to work with, especially when compared to Python (type hinting does not help). I have experience in a number of other languages, including C, which was the first language I learned, C++, Python, and Zig, which I really enjoy because it adds modern concepts like errors as types, tagged unions, and explicit allocation to a C-like base.</p>
 
 <h3>Systems Administration</h3>
+<p>My experience with systems administration began when I first setup my homelab. Originally, my homelab was just an excuse to build another computer because I liked building my gaming computer so much. However, as I went through the process of learning how to setup and maintain a server, I came to be familiar with a number of essential systems administration skills</p>
+
+<p>Perhaps chief among these skills is my experience with Linux. The first iteration of my homelab ran a proprietary distribution of Linux called Unraid. This operating system was extremely user friendly, which gave me an easy introduction to topics such as redundant drive arrays, containerization, and basic networking. I learned what docker containers were, how to set up port forwarding and internal networking, configured a basic reverse proxy with a preconfigured container, and exposed parts of my server to the internet with DNS resolution while also securing other services using tailscale's mesh networking. The experience with the OS also gave me the confidence to eventually approach and experiment with actual Linux distributions.</p>
+
+<p>In an effort to improve my skills with Linux, I switched my daily use desktop and laptop over to Arch Linux in February of 2026 so as to force myself to become familiar with the system. This was an extremely rewarding experience that got me comfortable with using package managers, controling services, using the command line, and troubleshooting problems. It was during this time that I became extremely comfortable with vim (which I use as my main text editor), and learned about the unix philosophy, with a particular focus on Filesystem Hierarchy Standard, the universality of file descriptors, and how configuration is approached broadly on unix systems.</p>
+
+<p>Eventually, Unraid's GUI oriented interface and tools became extremely frustrating to work with, a difficulty that was wholy unnecessary given that I was paying money for the system. So in September of 2026, I migrated my entire homelab infrastructure to Debian Linux. This experience was also extremely rewarding, as it allowed me to practically interact with the systems which I had only used through GUI abstractions previously. For instance, setting up this server allowed be to try using Nginx directly to manage reverse proxies, had me deploy docker containers using docker compose instead of a convenient GUI, and allowed me to build my own RAID arrays using mdadm. The most informative part of this migration was ensuring that data survived the transition. This required me to draft an informal change proposal/plan to ensure that I took the proper precautions when migrating data, including creating backups, running SMART tests, and building arrays in the proper order.</p>
+
+<h2>Soft Skills</h2>
 
 <h3>Logic and Reasoning</h3>
 
+<h3>Communication and Coordination</h3>
+
 <h2>Work History</h2>
 <h3>U.S. Air Force Academy Association and Foundation</h3>
-<p>March 2026 - Present</p>
+<h4>IT Support Specialist</h4>
+<p><i>June 2026 - Present</i></p>
+<p>I obtained by current position after a brief internship which began in March. This position has allowed me to practice my understanding of computer fundamentals in an actual production environment. While my day to day activities involve lots of basic troubleshooting, I am allowed to make progress on larger projects. So far, these projects have included automating user account creation and management with PowerShell, using APIs and scripting to populate and manage an asset manager, implementing 802.1x security for our site, planning a company SharePoint intranet, and testing an RMM solution for eventual deployement. Importantly, because this is a production environement, I have been learning how to take the proper steps to perform changes safely, and also the necessity of good documentation, a skill which is greatly aided by my background in philosohpical writing.</p>
 
 <h3>Goodwin Knight, LLC</h3>
-<p>January 2024 - January 2025</p>
+<h4>Assistant Construction Manager</h4>
+<p><i>January 2024 - January 2025</i></p>
+<p>After the first semester of my junior year in college, I took a gap year in order to figure out my life. I once again took a job in construction under my old boss, this time working with prefabricated units for commerical development. Unlike my previous position, this job was salaried and afforded me the opporunity to manage the site on top of my previous tasks. In this position I was charged with managing work timelines and dependiencies, using tools like gantt charts to track work progress. I was tasked with communicating and coordinating with many of the subcontractors on our site. One of my projects involved coordinating and organizing the "setting" of a large number of units, a difficult task which required me to properly reason about space, ordering, and time. I was also tracked with tracking site inventory and prepping/ordering regional inpections.</p>
 
 <h3>Aspen View Homes</h3>
-<p>July 2020 - August 2021</p>
+<h4>Field Technician</h4>
+<p><i>July 2020 - August 2021</i></p>
+<p>I took this job right after I graduated high school in 2020 because I didn't want to start college during Covid. It turned out to be an extremely valuable experience. Beyond the practical experience of getting familiar with power tools and all the stages and systems involved in the constrution of a house, I learned what it was like to actually work a job independently. I was forced to learn the homebuilding process in order to come up with a schedule which would ensure that I completed my timely fashion, since my supervisor did not have to bandwidth to track my tasks alongside all the tasks our subcontractors had. This helped me grow in terms of initiative, planning, and time management.</p>
 
 <h2>Hobbies</h2>
-<p>This may seem strange to include on a resume, which is why this isn't on my actual resume. But I think that knowing a person's hobbies and interests lets you get a better idea of who that person is. Plus I just like talking about my hobbies</p>
 
 <h3>Tabletop Gaming</h3>
 
 <h3>Philosophy</h3>
 
 <h3>Bass Guitar</h3>
-
-<h3>Bouldering</h3>
 
 {{ end }}
