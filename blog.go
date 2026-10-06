@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/yuin/goldmark"
+	"github.com/yuin/goldmark/renderer/html"
 	"gopkg.in/yaml.v3"
 )
 
@@ -66,7 +67,8 @@ func parsePost(path string) (Post, error) {
 	}
 
 	var buf bytes.Buffer
-	err = goldmark.Convert([]byte(parts[2]), &buf)
+	md := goldmark.New(goldmark.WithRendererOptions(html.WithUnsafe()))
+	err = md.Convert([]byte(parts[2]), &buf)
 	if err != nil {
 		return Post{}, err
 	}

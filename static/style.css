@@ -120,6 +120,13 @@ main {
     padding: var(--space-3) var(--space-2);
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+}
+
 /* ===================================================================
    Footer
    =================================================================== */
@@ -318,3 +325,4 @@ article h2 {
     color: var(--color-ink);
     border-bottom-color: var(--color-ink);
 }
+
